@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4 login-btn">
+    <h1 *ngIf="authService.isLoggedIn()">Welcome, {{authService.getLoggedInUser()}}</h1>
+    <a *ngIf="!authService.isLoggedIn()" routerLink="/login">
+      <h3>Please login to view your library</h3>
+    </a>
+  </div>
+  <div class="col-md-4"></div>
+</div>

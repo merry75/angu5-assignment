@@ -1,0 +1,36 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse header" data-toggle="collapse" data-target=".navbar-collapse.in">
+      <ul class="nav navbar-nav">
+        <li>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home</a>
+        </li>
+        <li *ngIf="authService.isLoggedIn()">
+          <a routerLink="/my-library" routerLinkActive="active">My library</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="!authService.isLoggedIn()">
+          <a routerLink="/login" routerLinkActive="active">
+            <i class="glyphicon glyphicon-user"></i>&nbsp;
+            <span>Log in</span>
+          </a>
+        </li>
+        <li *ngIf="authService.isLoggedIn()">
+          <!-- empty routerLink is here for consistent style -->
+          <a routerLink="" (click)="logout()">
+            <span class="glyphicon glyphicon-log-out"></span>&nbsp;<span>Log out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

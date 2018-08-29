@@ -1,0 +1,17 @@
+.navbar {
+    background: #185660;
+}
+
+.navbar-fixed-top .navbar-nav>li>a:hover {
+    color: #185660;
+    background: #e7e7e7;
+}
+
+.navbar-fixed-top .navbar-nav .active {
+    color: #185660;
+    background: #e7e7e7;
+}
+
+.navbar-nav>li>a {
+    color: white;
+}

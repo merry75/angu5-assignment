@@ -1,0 +1,29 @@
+<div class="alert alert-danger" *ngIf="isErrorOnLogin">
+  <span>Login error: wrong credentials</span>&nbsp;
+</div>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4 login-form">
+    <h3 class="login-form-title">Log in</h3>
+    <form [formGroup]="loginForm" novalidate>
+      <fieldset>
+        <div class="form-group" [ngClass]="{ 'has-warning' : username.invalid && username.touched }">
+          <label for="username">Username</label>
+          <input id="username" type="text" class="form-control" formControlName="username">
+          <div class="form-validation-errors">
+            <div *ngIf="username.touched && username.errors && username.errors.required" class="alert-warning">Username is required</div>
+          </div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-warning' : password.invalid && password.touched }">
+          <label for="password">Password</label>
+          <input id="password" type="password" class="form-control" formControlName="password">
+          <div class="form-validation-errors">
+            <div *ngIf="password.touched && password.errors && password.errors.required" class="alert-warning">Password is required</div>
+          </div>
+        </div>
+        <button type="submit" (click)="login()" class="btn btn-large btn-success">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+  <div class="col-md-4"></div>
+</div>

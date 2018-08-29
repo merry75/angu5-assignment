@@ -1,0 +1,26 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.mat-table {
+  overflow: auto;
+  padding: 20px;
+}
+
+.mat-header-cell.mat-sort-header-sorted {
+  color: black;
+}
+
+.image {
+  max-width: 130px;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.book-title {
+  font-weight: bold;
+}
